@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--UI Base material colors -->
+    <color name="colorPrimary">#ffa000</color>
+    <color name="colorPrimaryDark">#C67100</color>
+    <color name="colorAccent">#ffd149</color>
+
+    <!--Custom colors for UI usage -->
+    <color name="grey">#bfbfbf</color>
+    <color name="fade_grey">#eeeeee</color>
+    <color name="white">#fff</color>
+    <color name="orange">#ef6c00</color>
+    <color name="black">#000</color>
+    <color name="dark_orange">#FFF4511E</color>
+    <color name="purple">#673ab7</color>
+    <color name="indigo_blue">#087cbe</color>
+    <color name="sky_blue">#00bfa5</color>
+    <color name="banana_green">#689f38</color>
+    <color name="yellow_green">#9e9d24</color>
+    <color name="yellow">#f4af00</color>
+    <color name="moderate_orange">#f4511e</color>
+</resources>
