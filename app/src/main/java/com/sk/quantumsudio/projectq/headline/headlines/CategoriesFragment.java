@@ -16,7 +16,7 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
     private static final String TAG = "CategoriesFragment";
     static final String API_KEY = "dab6659cd2744a02987fe068bcb70002";  // ### NEWS API key HERE ###
 
-    Button entertainment,science,technology,global,business,health,sports;
+    Button entertainment,science,technology,global,business,health,sports,indianNews;
     TextView categories,newsSources,bbc,google,nat_geo,hindu,usaToday,telegraph;
     String url,category;
 
@@ -44,6 +44,7 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
         business = getActivity().findViewById(R.id.business);
         health = getActivity().findViewById(R.id.health);
         sports = getActivity().findViewById(R.id.sports);
+        indianNews = getActivity().findViewById(R.id.indian_news);
         bbc = getActivity().findViewById(R.id.bbc_news);
         google = getActivity().findViewById(R.id.google_news);
         nat_geo = getActivity().findViewById(R.id.national_geo);
@@ -58,6 +59,7 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
         business.setOnClickListener(this);
         health.setOnClickListener(this);
         sports.setOnClickListener(this);
+        indianNews.setOnClickListener(this);
         bbc.setOnClickListener(this);
         google.setOnClickListener(this);
         nat_geo.setOnClickListener(this);
@@ -99,6 +101,10 @@ public class CategoriesFragment extends Fragment implements View.OnClickListener
             case R.id.sports:
                 url = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey="+API_KEY;
                 category = "Sports";
+                break;
+            case R.id.indian_news:
+                url = "https://newsapi.org/v2/top-headlines?country=in&apiKey="+API_KEY;
+                category = "Top Indian News";
                 break;
             case R.id.bbc_news:
                 url = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey="+API_KEY;

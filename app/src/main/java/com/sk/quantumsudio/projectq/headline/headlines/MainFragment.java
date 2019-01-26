@@ -1,7 +1,9 @@
 package com.sk.quantumsudio.projectq.headline.headlines;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -29,11 +31,12 @@ import java.util.HashMap;
 
 public class MainFragment extends Fragment {
     private static final String TAG = "MainFragment";
-    public static String newsUrl,category,savedUrl,savedCategory;
+    public static String newsUrl,category;
     ListView listNews;
     ProgressBar loader;
     Toolbar toolbar;
     ImageView iv_categories;
+    SharedPreferences mPreferences;
 
     //arrayList of fetched data from the API
     ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
@@ -47,14 +50,18 @@ public class MainFragment extends Fragment {
         Log.d(TAG, "onCreateView: Initialing fragment view of"+TAG);
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         Bundle bundle = getArguments();
+
         if (bundle != null) {
             //retrieving the passed data from bundle
             newsUrl = bundle.getString("newsUrl");
             category = bundle.getString("category");
         } else {
-            newsUrl = "https://newsapi.org/v2/top-headlines?country=in&apiKey=dab6659cd2744a02987fe068bcb70002";
-            category = "Latest Indian News";
+            //recovers the saved data immediately when HomeActivity is visible
+            mPreferences = getActivity().getSharedPreferences("Reportr",Context.MODE_PRIVATE);
+            newsUrl = mPreferences.getString("lastAccessedUrl","https://newsapi.org/v2/top-headlines?country=in&apiKey=dab6659cd2744a02987fe068bcb70002");
+            category = mPreferences.getString("lastCategory","Latest Indian News");
         }
+
         return rootView;
     }
 
@@ -133,5 +140,16 @@ public class MainFragment extends Fragment {
                 }
             });
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //saves the last searchEngineid data before going to paused state
+        mPreferences = getActivity().getSharedPreferences("Reportr",Context.MODE_PRIVATE);
+        final SharedPreferences.Editor spEditor = mPreferences.edit();
+        spEditor.putString("lastAccessedUrl",newsUrl);
+        spEditor.putString("lastCategory",category);
+        spEditor.commit();
     }
 }

@@ -10,6 +10,7 @@
     <string name="business">Business</string>
     <string name="health">Health</string>
     <string name="sports">Sports</string>
+    <string name="top_indian_news">Top Indian News</string>
     <string name="popular_news_sources">Popular News Sources:</string>
     <string name="bbc_news">BBC News</string>
     <string name="google_news">Google News</string>
@@ -29,6 +30,13 @@
     <string name="hindi">Hindi:</string>
     <string name="bengali">Bengali:</string>
 
+    <!-- Others-->
+    <string name="live_toolbar_title">LiveTV News</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_this_app">About</string>
+    <string name="app_version">App version 1.0</string>
+
     <!-- About page text-->
     <string name="about_text">*ABOUT APP:\n\n\"Reportr\" is a simple news reading application with some basic but beautiful
 minimalistic features.\nIt has access to some very popular news sources such
@@ -45,10 +53,6 @@ ads.
     <string name="coming_soon">Live Tv News \n   Coming Soon..</string>
     <string name="temp_text">Developer-\nsubhajit Kar \nEmail-\ndevelopersubha123@gmail.com \n [Any suggestions are welcome]</string>
     <string name="the_telegraph">The Telegraph</string>
-    <string name="live_toolbar_title">LiveTV News</string>
-    <string name="terms_and_conditions">Terms and Conditions</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="about_this_app">About</string>
-    <string name="app_version">App version 1.0</string>
+
 
 </resources>
